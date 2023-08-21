@@ -7,7 +7,7 @@ from django.contrib import messages
 def authenticate_user(login_func):
     def wrapper(request, user=None):
         if request.user.is_authenticated:
-            return HttpResponse('You have been Authenticated')
+            return HttpResponse('home.html')
         if request.method == 'POST':
             login_form = LoginForm(request.POST)
             if login_form.is_valid():
